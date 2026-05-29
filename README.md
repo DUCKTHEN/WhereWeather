@@ -3,6 +3,10 @@
 WhereWeatherは、場所を入力してその地点の天気を表示できるWindows用の小さなデスクトップウィジェットです。
 OpenWeatherMapから天気を取得し、日本語 / English の表示切り替えができます。
 
+## Feedback
+
+不具合報告や質問はGitHub Issuesからお願いします。
+
 ## 使い方
 
 1. `WhereWeather.exe` と同じフォルダにある `openweather_api_key.example.bat` をコピーします。
@@ -67,3 +71,7 @@ build_where_weather.bat
 
 成功すると `dist` フォルダに `WhereWeather.exe` が作られます。
 `dist` にはREADMEとexampleファイルもコピーされます。
+
+## License
+
+MIT License
