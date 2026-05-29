@@ -96,6 +96,26 @@ Set `language` to `ja` or `en`.
 start_where_weather.bat
 ```
 
+配布している `WhereWeather.exe` はWindows用です。
+macOSでは、Python 3を使ってソースコードから起動してください。
+
+```bash
+python3 where_weather.py
+```
+
+Mac用の `.app` を配布する場合は、基本的にmacOS上で別途ビルドする必要があります。
+
+## Running from Source
+
+The provided `WhereWeather.exe` is for Windows.
+On macOS, run the app from source with Python 3:
+
+```bash
+python3 where_weather.py
+```
+
+A macOS `.app` build should generally be created on macOS.
+
 ## exeを作る場合
 
 配布用のWindows exeを作る場合は、PyInstallerをインストールしてから `build_where_weather.bat` を実行します。
