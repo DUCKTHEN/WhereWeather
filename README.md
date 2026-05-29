@@ -3,9 +3,13 @@
 WhereWeatherは、場所を入力してその地点の天気を表示できるWindows用の小さなデスクトップウィジェットです。
 OpenWeatherMapから天気を取得し、日本語 / English の表示切り替えができます。
 
+WhereWeather is a tiny retro desktop weather widget for Windows.
+Type a location, check the weather there, and switch the UI between Japanese and English.
+
 ## Feedback
 
 不具合報告や質問はGitHub Issuesからお願いします。
+Please use GitHub Issues for bug reports, questions, and feedback.
 
 ## 使い方
 
@@ -21,6 +25,20 @@ set "OPENWEATHER_API_KEY=取得したAPIキー"
 WhereWeatherは、`WhereWeather.exe` と同じフォルダにある `openweather_api_key.bat` と `config.json` を読み込みます。
 初回起動時に `config.json` がない場合は、御茶ノ水の設定で起動します。
 
+## Quick Start
+
+1. Copy `openweather_api_key.example.bat` in the same folder as `WhereWeather.exe`.
+2. Rename the copied file to `openweather_api_key.bat`.
+3. Open `openweather_api_key.bat` and replace `your_api_key_here` with your own OpenWeatherMap API key.
+4. Double-click `WhereWeather.exe`.
+
+```bat
+set "OPENWEATHER_API_KEY=your_api_key_here"
+```
+
+WhereWeather reads `openweather_api_key.bat` and `config.json` from the same folder as `WhereWeather.exe`.
+If `config.json` does not exist, the app starts with the default Ochanomizu location.
+
 ## APIキーについて
 
 WhereWeatherは天気データの取得にOpenWeatherMapを使います。
@@ -30,6 +48,14 @@ WhereWeatherは天気データの取得にOpenWeatherMapを使います。
 
 `openweather_api_key.bat` は個人用の秘密情報です。
 GitHubなどで公開する場合も、本物のAPIキーを書いたファイルはアップロードしないでください。
+
+## API Key
+
+WhereWeather uses OpenWeatherMap for weather data.
+Each user should create and use their own OpenWeatherMap API key.
+
+Do not upload a real `openweather_api_key.bat` file to GitHub.
+Only `openweather_api_key.example.bat` should be shared.
 
 ## 場所と言語
 
@@ -51,6 +77,16 @@ GitHubなどで公開する場合も、本物のAPIキーを書いたファイ�
 ```
 
 `language` は `ja` または `en` を指定できます。
+
+## Location and Language
+
+Enter a location in the widget and press `Set` to update the weather location.
+The app searches the location with OpenWeatherMap, converts it to latitude and longitude, and saves it to `config.json`.
+
+Use the `EN` / `日本語` button to switch between Japanese and English.
+
+You can also edit `config.json` directly.
+Set `language` to `ja` or `en`.
 
 ## Pythonで起動する場合
 
@@ -74,4 +110,7 @@ build_where_weather.bat
 
 ## License
 
-MIT License
+WhereWeather is released under the MIT License.
+
+This repository includes PixelMplus fonts, which are distributed under the M+ FONT LICENSE.
+See `THIRD_PARTY_NOTICES.md` and the license files under `fonts/` for details.
