@@ -1,0 +1,7 @@
+openweather_api_key.bat
+config.json
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec

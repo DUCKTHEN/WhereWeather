@@ -1,0 +1,4 @@
+@echo off
+rem OpenWeatherMapで取得したAPIキーを、下のyour_api_key_hereの部分に貼り付けてください。
+rem このファイルをopenweather_api_key.batにコピーしてから編集します。
+set "OPENWEATHER_API_KEY=your_api_key_here"
