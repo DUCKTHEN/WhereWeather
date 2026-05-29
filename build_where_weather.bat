@@ -14,7 +14,7 @@ python -m PyInstaller ^
 
 if errorlevel 1 exit /b %errorlevel%
 
-copy /Y "README.md" "dist\README.md" >nul
+copy /Y "RELEASE_README.md" "dist\README.md" >nul
 copy /Y "config.example.json" "dist\config.example.json" >nul
 copy /Y "openweather_api_key.example.bat" "dist\openweather_api_key.example.bat" >nul
 

@@ -126,7 +126,7 @@ build_where_weather.bat
 ```
 
 成功すると `dist` フォルダに `WhereWeather.exe` が作られます。
-`dist` にはREADMEとexampleファイルもコピーされます。
+`dist` には配布用READMEとexampleファイルもコピーされます。
 
 ## License
 
