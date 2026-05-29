@@ -34,12 +34,14 @@ PIXEL_FONT_FILES = (
     PIXEL_FONT_DIR / "PixelMplus12-Bold.ttf",
 )
 TITLE_ICON_PATH = RESOURCE_DIR / "assets" / "chick_icon.png"
+TITLE_ICON_ICO_PATH = RESOURCE_DIR / "assets" / "chick_icon.ico"
 WEATHER_ICON_DIR = RESOURCE_DIR / "assets" / "weather_icons"
 FONT_FAMILY = "PixelMplus10"
 TITLE_FONT_FAMILY = "PixelMplus12"
 EMOJI_FONT_FAMILY = "Segoe UI Emoji"
 FR_PRIVATE = 0x10
 DPI_AWARENESS_SYSTEM_AWARE = 1
+APP_USER_MODEL_ID = "DUCKTHEN.WhereWeather"
 BACKGROUND_COLOR = "#050b07"
 TEXT_COLOR = "#31d912"
 MUTED_TEXT_COLOR = "#1ba24d"
@@ -229,6 +231,16 @@ def enable_crisp_pixel_rendering():
             pass
 
 
+def set_windows_app_id():
+    if not hasattr(ctypes, "windll"):
+        return
+
+    try:
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(APP_USER_MODEL_ID)
+    except Exception:
+        pass
+
+
 def choose_weather_icon(description):
     if any(word in description for word in ("雷", "雷雨", "thunder")):
         return "storm"
@@ -298,6 +310,7 @@ def format_weather(data):
 
 class WhereWeatherApp(tk.Tk):
     def __init__(self):
+        set_windows_app_id()
         enable_crisp_pixel_rendering()
         super().__init__()
 
@@ -329,6 +342,12 @@ class WhereWeatherApp(tk.Tk):
         self.refresh_weather()
 
     def _set_title_icon(self):
+        if TITLE_ICON_ICO_PATH.exists():
+            try:
+                self.iconbitmap(default=str(TITLE_ICON_ICO_PATH))
+            except tk.TclError:
+                pass
+
         if not TITLE_ICON_PATH.exists():
             return
 
