@@ -1,4 +1,6 @@
 # WhereWeather
+<img width="188" height="229" alt="image" src="https://github.com/user-attachments/assets/7d205653-7aaf-4ba4-99f4-5c53f63869a1" />
+<img width="188" height="229" alt="image" src="https://github.com/user-attachments/assets/220b695d-72cc-40b7-9fe1-bc81d4014a57" />
 
 WhereWeatherは、場所を入力してその地点の天気を表示できるWindows用の小さなデスクトップウィジェットです。
 OpenWeatherMapから天気を取得し、日本語 / English の表示切り替えができます。
